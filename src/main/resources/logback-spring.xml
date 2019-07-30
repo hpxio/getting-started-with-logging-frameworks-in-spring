@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
+    <!-- Set a context name for the Logger -->
+    <contextName>GettingStartedWithLoggingFrameworks</contextName>
+
+    <!-- Appender are the Processors - which delegate task of Writing Logs
+        The task of wirting the task can be on System.out/System.err on Console,
+        or on to a File or even a Custom implementation for writing logs.
+         It is possible to define more than one appender and send some logs to
+         one appender and other logs to second one. -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>LOG::Date-Time->%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %boldCyan(Text->%logger{36}.%M) - %msg%n</pattern>
+            <pattern>%contextName:%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level) %boldCyan(Text->%logger{36}.%M) - %msg%n</pattern>
         </encoder>
-
-
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>DENY</onMatch>
-        </filter>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>INFO</level>
-            <onMatch>ACCEPT</onMatch>
-        </filter>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>TRACE</level>
-            <onMatch>DENY</onMatch>
-        </filter>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>WARN</level>
-            <onMatch>DENY</onMatch>
-        </filter>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
-            <onMatch>DENY</onMatch>
-        </filter>
     </appender>
 
     <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>
 
+
+    <!-- Logger define the Log Level control and appender to be mapped.
+        This means user can send logs from spring core library to
+        console & other user-written class logs to file for further
+        analysis with tools like ELK Stacks -->
     <logger name="org.springframework" level="WARN"/>
 
+    <!-- Additivity tells if the logging for given class/package is
+        already covered by root logger then repetitive log should
+         not be written-->
     <logger name="com.app.rc" additivity="false" level="trace">
         <appender-ref ref="STDOUT"/>
     </logger>
