@@ -101,3 +101,4 @@ be the value of the named property.
 https://blog.miyozinc.com/spring/880/  
 https://dzone.com/articles/configuring-logback-with-spring-boot  
 https://logback.qos.ch/manual/introduction.html  
+https://gist.github.com/sndyuk/1612622  
