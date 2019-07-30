@@ -1,5 +1,6 @@
 package com.app.rc.getting_started_with_logging_frameworks;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

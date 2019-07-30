@@ -1,3 +1,4 @@
+## Logback
 There are two ways of writing logs-  
 - One, using the Spring provided default logger implementation facilitated by 
 base.xml config
@@ -47,3 +48,19 @@ Logback provides its own set of keyword mapping called as Pattern , which is
 simply different kind of dynamic values used in logs like datetime, thread, etc.
 Furthermore if user want to have custom mapping they can create using 
 Conversion Rules. It is done through `ConversionName` & `ConverterClass`
+
+**Filtering Log Levels**  
+Now, lets say, you only want to print INFO level log in console. For this, 
+you can set filter using ch.qos.logback.classic.filter.LevelFilter, where 
+you can define filter and its level to ALLOW or DENY.
+
+**Configuration Reloading**  
+By default, the configuration file will be scanned for changes once every minute.
+You can specify a different scanning period by setting the scanPeriod attribute
+of the <configuration> element. Values can be specified in units of milliseconds,
+seconds, minutes or hours.
+
+#### Useful Links
+https://blog.miyozinc.com/spring/880/
+https://dzone.com/articles/configuring-logback-with-spring-boot
+https://logback.qos.ch/manual/introduction.html
