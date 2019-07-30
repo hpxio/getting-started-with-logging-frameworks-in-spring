@@ -1,8 +1,6 @@
 package com.app.rc.getting_started_with_logging_frameworks;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,9 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @Slf4j
 public class GettingStartedWithLoggingFrameworksApplication implements CommandLineRunner {
-
-    /* Only showing SLF4J in this class */
-    /*private static final Logger LOG = LoggerFactory.getLogger(GettingStartedWithLoggingFrameworksApplication.class);*/
 
     private static final String DIV = "---------------------------------------------------------------------------";
 

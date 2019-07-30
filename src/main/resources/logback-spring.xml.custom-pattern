@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <conversionRule conversionWord="u_name" converterClass="com.app.rc.getting_started_with_logging_frameworks.config.logback.converter.NameTagConverter"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>LOG::Date-Time->%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %boldCyan(Text->%logger{36}.%M) - %msg%n</pattern>
+            <pattern>LOG::%-10u_name Date-Time->%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) Text->%logger{36}.%M - %msg%n</pattern>
         </encoder>
     </appender>
 
